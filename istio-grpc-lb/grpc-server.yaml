@@ -1,6 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata:
+metadata:  
   namespace: istio-grpc-demo
   name: grpc-server
   labels:
@@ -16,8 +16,9 @@ spec:
         app: grpc-server
     spec:
       containers:
-        - name: grpc-server
+        - name: grpc-server          
           image: jonascheng/grpc-server:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
           env:

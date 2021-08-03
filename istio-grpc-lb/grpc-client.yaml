@@ -16,8 +16,9 @@ spec:
         app: grpc-client
     spec:
       containers:
-        - name: grpc-client
-          image: jonascheng/grpc-server:latest
+        - name: grpc-client          
+          image: jonascheng/grpc-client:latest
+          imagePullPolicy: Always
           env:
             - name: POD_IP
               valueFrom:
