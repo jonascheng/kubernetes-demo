@@ -6,7 +6,7 @@ import (
 	"os"
 	"time"
 
-	echo "github.com/WeiWeiWesley/ithome12/kubernetes/gRPCExample"
+	echo "github.com/jonascheng/kubernetes-demo/istio-grpc-lb/echo"
 	"google.golang.org/grpc"
 )
 
