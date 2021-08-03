@@ -81,9 +81,9 @@ namespace/istio-grpc-demo labeled
 
 $> istioctl install
 
-✔ Istio core installed        
-✔ Istiod installed  
-✔ Ingress gateways installed                                                             
+✔ Istio core installed
+✔ Istiod installed
+✔ Ingress gateways installed
 ✔ Installation complete
 ```
 
@@ -107,12 +107,12 @@ Observe IP responded from grpc-server
 # replace grpc-client-75fb696656-bbcxb with corresponding client pod
 $> kubectl logs -f -n istio-grpc-demo grpc-client-75fb696656-bbcxb grpc-client
 
-2021/08/03 10:02:14 Current pod ip: 10.100.2.27
-2021/08/03 10:02:16 Resp: 10.100.1.20
-2021/08/03 10:02:17 Resp: 10.100.1.20
-2021/08/03 10:02:18 Resp: 10.100.1.20
-2021/08/03 10:02:19 Resp: 10.100.1.20
-2021/08/03 10:02:20 Resp: 10.100.1.20
+2021/08/03 13:25:58 Current pod ip: 10.100.2.33
+2021/08/03 13:26:01 Resp: 10.100.1.22
+2021/08/03 13:26:02 Resp: 10.100.0.14
+2021/08/03 13:26:03 Resp: 10.100.1.22
+2021/08/03 13:26:04 Resp: 10.100.2.32
+2021/08/03 13:26:05 Resp: 10.100.0.14
 ```
 
 As the result, without Istio the IP responded from server side was constant, on the flip side the IP was randomly responded with Istio.
