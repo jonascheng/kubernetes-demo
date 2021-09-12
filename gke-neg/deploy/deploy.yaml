@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-world-deploy
+  namespace: playground
+  labels:
+    app: hello-world
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: hello-world
+  template:
+    metadata:
+      labels:
+        app: hello-world
+    spec:
+      containers:
+      - name: hello-app
+        image: gcr.io/cubo-playground/hello-app:v1
+        ports:
+        - name: hello-app-port
+          containerPort: 8080
+        resources:
+          requests:
+            cpu: 200m
+        readinessProbe:
+          httpGet:
+            port: 8080
+            path: /
+          initialDelaySeconds: 1
+          periodSeconds: 30
+          timeoutSeconds: 4
+          successThreshold: 2
+          failureThreshold: 3
+        livenessProbe:
+          httpGet:
+            port: 8080
+            path: /
+          initialDelaySeconds: 1
+          periodSeconds: 30
+          timeoutSeconds: 4
+          successThreshold: 1
+          failureThreshold: 3
