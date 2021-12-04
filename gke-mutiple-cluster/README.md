@@ -16,10 +16,8 @@ kubectl apply -f deploy-2.0.yaml
 2. Create K8s Services for Application
 
 ```console
-# first cluster
-kubectl apply -f svc-1.0.yaml
-# second cluster
-kubectl apply -f svc-2.0.yaml
+# both clusters
+kubectl apply -f svc.yaml
 ```
 
 Note the `cloud.google.com/neg: '{"exposed_ports": {"80":{}}}'` annotation on the service telling GKE to create a NEG for the service.
