@@ -1,3 +1,5 @@
+We will set up multi-cluster load balancing for hello-world services - 1.0 and 2.0 - deployed across two clusters. We’ll use simple path-based rules, and route any request for /hello-world/* to service.
+
 # Deploy Applications and Services to GKE clusters
 
 Repeat following steps for each of your clusters.
@@ -113,7 +115,7 @@ gcloud compute backend-services add-backend backend-service-hellow-world \
  --network-endpoint-group [neg_name] \
  --network-endpoint-group-zone=[neg_zone] \
  --balancing-mode=RATE \
- --max-rate-per-endpoint=100
+ --max-rate-per-endpoint=1
 ```
 
 3. Allow GCLB Traffic
