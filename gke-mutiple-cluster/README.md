@@ -74,7 +74,7 @@ gcloud compute addresses create unified-load-balancer-ipv4 \
 6. Create Target HTTP Proxy
 
 ```console
-gcloud compute target-http-proxies create unified-http-proxy \
+gcloud compute target-http-proxies create unified-load-balancer-http-proxy \
   --url-map=unified-load-balancer
 ```
 
