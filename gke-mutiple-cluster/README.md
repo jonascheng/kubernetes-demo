@@ -81,8 +81,8 @@ gcloud compute target-http-proxies create unified-load-balancer-http-proxy \
 7. Create Forwarding Rule
 
 ```console
-gcloud compute forwarding-rules create hellow-world-fw-rule \
-  --target-http-proxy=unified-http-proxy \
+gcloud compute forwarding-rules create unified-load-balancer-fw-rule \
+  --target-http-proxy=unified-load-balancer-http-proxy \
   --global \
   --ports=80 \
   --address=unified-load-balancer-ipv4
